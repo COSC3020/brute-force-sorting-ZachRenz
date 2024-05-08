@@ -2,8 +2,6 @@ function permutationSort(a) {
     
     let count = 0;
     let sorted = false;
-    // I did look at MelkMan419's implementation to find out how to traverse a permutation tree
-    // recursively, but now my understanding of this is complete. 
     function permutations(a, i){ 
         if (i == a.length - 1){
             count++;
@@ -12,8 +10,8 @@ function permutationSort(a) {
                 return count;
             }
         }
-        for(let j = i; j < a.length; j++){
-            [a[i], a[j]] = [a[j], a[i]];
+        for(let j = i; j < a.length; j++){ // I did look at MelkMan419's implementation to find out how to traverse a permutation tree
+            [a[i], a[j]] = [a[j], a[i]];   // recursively, but now my understanding of this is complete. 
             permutations(a, i+1);
             if(sorted == true){
                 return count;
