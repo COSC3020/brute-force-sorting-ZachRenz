@@ -1,3 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/7eEMzrNd)
 # Brute-Force Sorting
 
 We talked about the complexity of the sorting problem, and used an argument over
@@ -20,3 +21,11 @@ randomly without memory instead of systematically trying them?
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+## Runtime Anaylsis Answer
+
+In the best case (where the array comes sorted), our array would pass through one branch of our permutation tree (of length n), and then be checked by `checkSort()`, which has a complexity of $\Theta(n)$. Therefore our complexity in the best case is $\Theta(n^2)$. 
+
+In the worse case our array would need to go through every single permutation systematically. This would lead to a complexity of $\Theta(n!)$, but we still have to check every case if it is sorted using `checkSort()`, which has a complexity of $\Theta(n)$, so our complexity in the worst case is $\Theta(n*n!)$. 
+
+If we were to generate permutations randomly without remembering the cases we've tried, we cannot gaurantee that we will stumble upon the sorted permutation. Because of this the complexity here would have to be Infinite. 
